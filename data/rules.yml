@@ -1,0 +1,207 @@
+version: "3.1"
+
+rules:
+
+# Handle all chitchat 
+- rule: respond to greet
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: respond to greet name
+  steps:
+  - intent: greet_name
+  - action: utter_greet_name
+
+- rule: respond to ask name
+  steps:
+  - intent: ask_name
+  - action: utter_ask_name
+
+- rule: respond to bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_bot_challenge
+
+- rule: goodbye 
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: respond to praise qea 
+  steps:
+  - intent: praise_qea
+  - action: utter_praise_qea
+
+- rule: respond to mood great
+  steps:
+  - intent: mood_great
+  - action: utter_mood_great
+
+- rule: respond to mood unhappy
+  steps:
+  - intent: mood_unhappy
+  - action: utter_mood_unhappy
+
+- rule: respond to what can you do 
+  steps:
+  - intent: what_can_you_do
+  - action: utter_what_can_you_do
+
+- rule: respond to what can you do with name 
+  steps:
+  - intent: what_can_you_do_name
+  - action: utter_what_can_you_do_name
+
+- rule: user asks for personal calender clearly mentioning the day
+  steps:
+  - intent: ask_personal_schedule
+  - action: action_personal_schedule
+
+- rule: user asks for personal calender with no date mentioned
+  steps:
+  - intent: ask_personal_schedule_ambiguous
+  - action: action_personal_schedule_ambiguous 
+
+# - rule: user asks for other's calendar for today
+#   steps:
+#   - intent: ask_other_schedule_today
+#   - action: action_other_schedule_today
+
+- rule: user asks for other's calendar with specific date
+  steps:
+  - intent: ask_others_schedule
+  - action: action_others_schedule
+
+- rule: user asks for other's calendar for today ambiguously
+  steps:
+  - intent: ask_other_schedule_ambiguous
+  - action: action_others_schedule_ambiguous
+
+- rule: user asks for other's calendar for today ambiguously
+  steps:
+  - intent: ask_personal_schedule_range
+  - action: action_personal_schedule_range
+
+- rule: user asks for other's calendar for a range
+  steps:
+  - intent: ask_others_schedule_range
+  - action: action_others_schedule_range
+
+- rule: user asks about business working hours
+  steps: 
+  - intent: ask_business_hours
+  - action: utter_ask_business_hours
+
+- rule: respond to business working hours part time
+  steps:
+  - intent: reply_contract_part_time
+  - action: action_reply_contract_part_time
+
+- rule: respond to business working hours full time
+  steps:
+  - intent: reply_contract_full_time
+  - action: action_reply_contract_full_time
+
+- rule: respond to business working hours fixed term
+  steps:
+  - intent: reply_contract_fixed
+  - action: action_reply_contract_fixed
+
+- rule: user asks for business working hours independent
+  steps:
+  - intent: reply_contract_independent
+  - action: action_reply_contract_independent
+
+- rule: user asks about overtime
+  steps: 
+  - intent: work_overtime
+  - action: utter_work_overtime
+
+- rule: user asks for personal calendar for postlunch 
+  steps:
+  - intent: ask_personal_postlunch_schedule
+  - action: action_personal_postlunch_schedule
+
+- rule: user asks for personal calendar for postlunch ambiguously
+  steps:
+  - intent: ask_personal_postlunch_schedule_ambiguous
+  - action: action_personal_postlunch_schedule_ambiguous
+
+- rule: user asks for others calendar for postlunch 
+  steps:
+  - intent: ask_others_postlunch_schedule
+  - action: action_others_postlunch_schedule
+
+- rule: user asks for others calendar for postlunch ambiguously
+  steps:
+  - intent: ask_other_postlunch_schedule_ambiguous
+  - action: action_others_postlunch_schedule_ambiguous 
+
+
+- rule: user asks about toil policy
+  steps: 
+  - intent: time_Off_in_lieu
+  - action: utter_time_Off_in_lieu
+
+
+- rule: user wants to know about work overtime
+  steps:
+  - intent: affirm
+  - action: action_check_affirmation
+
+- rule: user does not want to know about work overtime
+  steps:
+  - intent: deny
+  - action: action_check_affirmation
+
+- rule: user does not know range ambiguously
+  steps: 
+  - intent: ask_range_ambiguous
+  - action: action_range_ambiguous
+
+- rule: range wierd
+  steps: 
+  - intent: ask_range_weird
+  - action: action_range_weird
+
+- rule: range weird personal
+  steps:
+  - intent: ask_range_weird_personal
+  - action: action_range_weird_personal
+
+- rule: user asks about goal setting
+  steps: 
+  - intent: ask_goal_setting
+  - action: utter_ask_goal_setting
+
+# - rule: post lunch range wierd
+#   steps: 
+#   - intent: ask_postlunch_range_weird
+#   - action: action_postlunch_range_weird  
+
+# - rule: user wants to know about toil policy
+#   steps:
+#   - intent: affirm
+#   - action: action_check_affirmation_lieu_policy
+
+# - rule: user does not want to know about toil policy
+#   steps:
+#   - intent: deny
+#   - action: action_check_affirmation_lieu_policy
+
+- rule: fallback
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default
+
+- rule: gibberish talk
+  steps:
+  - intent: gibberish
+  - action: utter_default
+
+
+# - rule: check if time is recognised
+#   steps:
+#   - intent: check
+#   - action: action_check

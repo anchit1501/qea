@@ -1,0 +1,198 @@
+version: "3.1"
+
+intents: 
+  - greet
+  - greet_name
+  - ask_name
+  - goodbye
+  - affirm
+  - deny
+  - praise_qea
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - what_can_you_do
+  - what_can_you_do_name
+  - ask_personal_schedule
+  - ask_personal_schedule_ambiguous
+  - ask_personal_schedule_range
+  - ask_other_schedule_ambiguous
+  - ask_others_schedule
+  - ask_others_schedule_range
+  - ask_business_hours
+  - reply_contract_part_time
+  - reply_contract_full_time
+  - reply_contract_fixed
+  - reply_contract_independent
+  - work_overtime
+  - gibberish
+  - time_Off_in_lieu
+  - ask_range_ambiguous
+  - ask_personal_postlunch_schedule
+  - ask_personal_postlunch_schedule_ambiguous
+  - ask_others_postlunch_schedule
+  - ask_other_postlunch_schedule_ambiguous
+  - ask_range_weird
+  - ask_range_weird_personal
+  - ask_postlunch_range_weird
+  - ask_goal_setting
+  # - check
+
+entities:
+  - time
+  - name
+  - employee
+
+slots:
+  time:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: time
+  name:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: name
+  employee:
+    type: any
+    mappings:
+    - type: from_entity
+      entity: employee
+
+responses:
+# ---------------------------------------------------------------- CHITCHAT -------------------------------------------------------------------
+  utter_greet:
+  - text: "Hello, I am QEA, your Intellificial's Enterprise Assistant, nice to meet you! How can I help you today?😊"
+
+  utter_greet_name:
+  - text: "Hi {employee}, I am QEA, your Intellificial's Enterprise Assistant, nice to meet you! How can I help you today?😊"
+
+  #it can be changed in the future to respond different than utter_greet
+  utter_ask_name:
+  - text: "Hello, I am QEA, your Intellificial's Enterprise Assistant, nice to meet you! How can I help you today?😊" 
+
+  utter_goodbye:
+  - text: "Bye, take care!"
+
+  utter_praise_qea:
+  - text: "Thank you 😊"
+
+  utter_mood_great:
+  - text: "Great! Let me know if I can be of any assistance."
+
+  utter_mood_unhappy:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_bot_challenge:
+  - text: "I am a bot, powered by Rasa and developed at Intellificial."
+
+  utter_what_can_you_do:
+  - text: "I am your Enterprise HelpDesk Assistant. I can help answer your queries related to calendar events, working hours, work overtime." 
+
+  utter_what_can_you_do_name:
+  - text: "Hi {employee}, I am your Enterprise HelpDesk Assistant. I can help answer your queries related to calendar events, working hours, work overtime."
+
+# ---------------------------------------------------------------- FALLBACK -------------------------------------------------------------------
+
+  utter_default:
+  - text: "Your query is unclear and needs to be rephrased. Alternatively, if you are seeking a response pertaining to our policies and have not found a suitable response, you can write to hr@intellificial.com. Let me know if you have other queries😊"
+
+# ----------------------------------------------------------------- WORKING HOURS -------------------------------------------------------------
+
+  utter_ask_business_hours:
+  - text: |
+      Intellificial's general hours of business are between 9:00 AM to 5:00 PM, Monday to Friday. Your hours of work will depend on business needs and the requirements of the work you are assigned. Your manager will work with you to establish your standard hours of work and break times.
+      
+      To know more about the general information regarding your pay, conditions and our expectations for you, could you please type in your employment contract type? (For example: Full-time, Part-time, Fixed-term or Independent contractor etc.)
+
+  utter_work_overtime:
+  - text: |
+      From time to time, an employee may be required to work outside their ordinary working hours to accommodate work-related responsibilities. If necessary, you may be required to work additional hours or after hours when performing your duties.
+      
+      Employee is advised to take pre-approval of their client manager, Intellificial manager and HR on e-mail mentioning the extra number of hours expected to be worked on a future date. This is to ensure that an employee is not working excessive hours and to ensure work-life balance for the Intellificial employees. 
+      
+      Employee is responsible for taking the pre-approval on number of extra hours as mentioned above to be eligible for overtime pay or TOIL/Compensatory off.
+      
+      Do you want to know more about overtime pay?
+
+# -----------------------------------------------------------------TOIL POLICY -------------------------------------------------------------
+
+  utter_time_Off_in_lieu:
+  - text: "Time off in lieu (TOIL)/compensatory off eligibility:
+
+        1) Employee can choose TOIL/compensatory off if the client for which employee has worked extra hours does not compensate Intellificial in monetary terms.
+
+        2) Compensatory off will be awarded to the eligible employee according to the specific number of extra hours mentioned in the pre-approval e-mail by the employee. Pre- approval e-mail must be marked to client manager, Intellificial manager and HR.
+
+        3) Employees must apply compensatory off on employee portal ZOHO and consume their compensatory off within 6 months from the date they accrued it to avoid the compensatory off lapse.
+
+        4) Intellificial manager must approve compensatory off on employee portal ZOHO and encourage them to use compensatory off within 6 months period of accrual.
+
+        5) Compensatory off cannot be accrued by employee for monetary benefits at the time of exit/ termination of employment. \ \n
+        Note: If employee voluntarily opts to stay late to complete their work with or without pre-approval from their client manager, Intellificial manager and HR then they will not be eligible to make a request for overtime pay or TOIL/compensatory off. \ \n
+        <b>Any exceptions to above policy need to be discussed with HR for further action.</b> \ \n
+        Do you want to know how to write an email for pre-approval?"
+
+# ----------------------------------------------------------------- ASK GOAL SETTING -------------------------------------------------------------
+  utter_ask_goal_setting:
+  - text: Organization goals are set by the CEO around Mid-July of the new Financial year (FY) and shared with the SLT (Senior Leadership Team) by end of July month. CEO goals are cascaded to Delivery team and goal are set by delivery managers for themselves in the start of Aug month of that FY.
+          Respective Delivery managers begin the goal setting of the team members in an individual one-o-one goal setting discussion considering the CEO and Delivery team goals. Once goals are discussed and approved by the manager, employee uploads the goal sheet in ESS by for the FY.
+          Do you want to know about the detailed steps of Goal Setting process?
+
+  utter_goal_setting_steps:
+  - text: "Goal Setting Steps are as follows-
+          Step 1- Organization and CEO goal setting starts by mid May of the new Financial Year (FY).
+          Step 2- Organization and CEO goals are shared with Senior Leadership Team (SLT) by end of July month.
+          Step 3- Delivery Manager goal setting starts and ends by Mid Aug month.
+          Step 4- Employee goal setting starts by Mid Aug and ends by end of Aug month.
+          Step 5- All employees upload their goal sheets in ESS by end of Aug month.
+          Step 6- Mid-Year Review begins in Dec till Jan of the next calendar year.
+          Step 7- Annual performance review starts by mid May and ends by mid July of next FY."
+
+  utter_mail_draft:
+  - text: "<b>Mail draft for pre-approval:</b>   \ \n
+          <space> \ \n
+          To: &lt;Client manager&gt;   \ \n
+          <space>  \ \n
+          CC: &lt;Intellificial manager&gt;, &lt;HR&gt;  \ \n
+          <space>  \ \n
+          Subject line: Approval for expected over-time on <Date(s)   \ \n
+          <space>  \ \n
+          Hi &lt;Client manager&gt;,    \ \n
+          <space> \ \n
+          As agreed, can you please confirm that I’m required to do overtime work on <Date (s)> for <b><No. of hour(s)></b> and or &lt;start time&gt; to &lt;end time&gt; to meet the current project needs. Your approval is requested to keep Intellificial team posted on this arrangement.  \ \n
+          <space> \ \n
+          Thank you! \ \n
+          <space> \ \n
+          Kind Regards   \ \n
+          &lt;Employee Name&gt;"
+# ---------------------------------------------------------------- ACTIONS ---------------------------------------------------------------------
+actions:
+  - action_personal_schedule
+  - action_personal_schedule_ambiguous 
+  - action_personal_schedule_range
+  - action_others_schedule
+  - action_others_schedule_ambiguous
+  - action_others_schedule_range
+  - action_reply_contract_part_time
+  - action_reply_contract_full_time
+  - action_reply_contract_fixed
+  - action_reply_contract_independent
+  - action_check_affirmation
+  - action_range_ambiguous
+  - action_personal_postlunch_schedule
+  - action_personal_postlunch_schedule_ambiguous
+  - action_others_postlunch_schedule_ambiguous
+  - action_others_postlunch_schedule
+  - action_range_weird
+  - action_range_weird_personal
+  # - action_postlunch_range_weird
+  # - action_work_overtime
+  # - action_check
+  # - action_other_schedule_otherdays
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

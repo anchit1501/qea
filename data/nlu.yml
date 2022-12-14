@@ -1,0 +1,1100 @@
+version: "3.1"
+
+nlu:
+
+# ---------------------------------------------------------------- CHITCHAT -------------------------------------------------------------------
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - hey qea
+    - hi qea
+    - hey there
+    - morning qea
+    - afternoon qea
+    - evening qea
+    - hello qea
+    - hey sup qea
+    - sup qea
+    - suppp qea
+    - what's up qea
+
+- intent: greet_name
+  examples: |
+    - hi I am [Sneha](employee), who are you
+    - hi I'm [Sam](employee), who are you
+    - hi I am [Howard](employee), what's your name
+    - hi I'm [Sheldon](employee), what's your name
+
+- intent: ask_name
+  examples: |
+      - Hi, What is your name?
+      - Hey, May I know your name?
+      - Hello, What do people call you?
+      - hey, Do you have a name for yourself?
+      - hi, Do you have a name for yourself?
+      - What is your name?
+      - May I know your name?
+      - What do people call you?
+      - Do you have a name for yourself?
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - all good 
+    - biii
+    - bie
+    - bi 
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sure 
+    - ok 
+    - yep
+    - yes please
+    - yo
+    - yepp
+    - cool sure
+    - yep sure 
+    - yeah
+    - yea
+    - YES
+    - Yes
+    - Yup
+
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nope
+    - nah
+    - NO
+    - No
+
+- intent: praise_qea
+  examples: |
+    - you are amazing qea
+    - perfect
+    - great
+    - amazing work
+    - great keep it up
+    - good job
+    - great job
+    - wonderful
+    - so so perfect
+    - so good
+    - so perfect
+    - extremely good
+
+- intent: mood_great
+  examples: |
+    - feeling like a king
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am having a good day
+    - it's a great day
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - who are you qea?
+    - who are you
+
+- intent: what_can_you_do
+  examples: |
+    - what can you do?
+    - how can you help me?
+    - help me 
+
+- intent: what_can_you_do_name
+  examples: |
+    - hi, I am [Leonard](employee) how can you help me
+    - hey, I am [Bernadette](employee) what can you do
+    - hello, I am [Mascot](employee) what can you do
+# ---------------------------------------------------------------- CALENDAR --------------------------------------------------------------
+- intent: ask_personal_schedule 
+  examples: |
+    - meetings on Monday
+    - meetings on Mon
+    - meetings on wed
+    - meetings on Friday
+    - meetings on tue
+    - when are my meetings tomorrow
+    - what's my schedule for tomorrow
+    - tell me my schdule for tomorrow
+    - how busy am I tomorrow
+    - do I have any meetings tomorrow
+    - what does my day look like on Wednesday
+    - what does my day look like on tue
+    - whats my schedule on Wednesday
+    - whats my schedule on thurs
+    - please show calender for Wednesday
+    - please show calender for friday
+    - please show schdule for tuesday
+    - please show schdule for tues
+    - please show schdule for mon
+    - please show schdule for wed
+    - please show schdule for tue
+    - do I have any meetings on Thursday
+    - do I have any meetings on Thurs
+    - do I have any meetings on thurs
+    - how does my day look like a day after tomorrow
+    - what's my schedule like day after tomorrow
+    - do I have any meetings day after tomorrow
+    - tell my schdule for day after tomorrow
+    - what's my schedule for next Monday 
+    - what's my schedule for next Sat
+    - what's my schedule for next Sun
+    - what's my schedule for next Saturday
+    - what's my schedule for next Sunday
+    - what's my calender for next Thursday
+    - what's my calender for next mon
+    - what's my calender for next Fri
+    - my schedule for next Thursday
+    - am I busy on next friday
+    - How busy am I on next friday
+    - show me my calender for Wednesday
+    - show me my schdule for coming Thursday
+    - what does my day look like next week Thursday
+    - do I have any meetings Friday next week
+    - schedule next Tuesday 
+    - send me schedule for Friday
+    - send me schedule for Thursday 
+    - send me schedule for Thurs
+    - what is my schedule on 23rd october
+    - do I have any meetings on 28th february
+    - what is my schedule on 23/10/2022
+    - what is my schedule on 15/10/2022
+    - what is my calendar on 12/8/2022
+    - an I busy on 10th November
+    - What does my calender look like today?
+    - Meetings today?
+    - what meetings do I have today
+    - what are my meetings today
+    - do I have any meetings today?
+    - what does my schedule look like today
+    - what's my schedule today look like
+    - how busy am I today
+    - schedule for today
+    - meetings for today
+    - do I have any meetings today
+    - am I busy today?
+    - can you tell me my meetings for today
+    - do I have any meetings this Sunday
+    - any calls this Sunday
+    - are there any meetings this Friday
+    - Do I have any meetings this Thursday
+    - What's my calendar look like the day after tomorrow?
+    - I want to know my schedule for 03/12/2022? 
+    - I want to know my schedule for 03.12.2022? 
+    - I want to know what meetings my have on 20/11/2022
+    - I want to know what meetings my have on 20.11.2022
+    - tomorrow's meetings
+    - a day after tomorrow's meetings
+    - tomorrow's calendar
+    - tomorrow's schedule
+    - a day after tomorrow's schedule
+    - a day after tomorrow's calendar
+    - I want to know my schedule for 18th Nov
+    - I want to know my schedule for 20th Dec
+    - I want to know my schedule for 23rd Sept
+    - I want to know my schedule for 19 Jan
+    - I want to know my schedule for 3 Feb
+    - I want to know my schedule for 14 Mar
+    - I want to know my schedule for 18th apr
+    - I want to know my schedule for 20th may
+    - I want to know my schedule for 23rd jun
+    - I want to know my schedule for 19 jul
+    - I want to know my schedule for 3 aug
+    - I want to know my schedule for 14 oct
+    - can you tell me my schedule for 18th apr
+    - can you tell me my schedule for 20th may
+    - can you tell me my schedule for 23rd jun
+    - can you tell me my schedule for 19 jul
+    - can you tell me my schedule for 3 aug
+    - can you tell me my schedule for 14 oct
+
+- intent: ask_personal_schedule_ambiguous
+  examples: |
+    - my Meetings
+    - my calender
+    - calendar availability
+    - my calendar availability 
+    - calendar availability for me
+    - what calls do I have
+    - any calls
+    - is there any calls
+    - please tell me my meetings 
+    - tell me my meetings
+    - can you tell me my meetings
+    - do I have any meetings?
+    - please fetch my schedule
+    - what's my schedule like
+    - please tell me my meetings
+    - tell me my meetings
+    - what does my day look like
+    - my day
+    - what does my day look like
+    - what's my day like
+    - my plan
+    - my meetings
+    - my schedule
+    - send me schedule
+    - can you send me my schedule
+    - Help me know my schedule
+    - can you tell me my schedule
+    - can you tell my schedule
+
+- intent: ask_personal_schedule_range
+  examples: |
+    - do I have any meetings this afternoon
+    - do I have any meetings in the evening
+    - do I have any meetings in the morning
+    - meetings this afternoon
+    - meetings in the morning
+    - meetings today morning
+    - meetings Friday afternoon
+    - meetings on 23rd afternoon
+    - my meetings this afternoon
+    - can you tell me if I have any meetings this afternoon
+    - any meetings for me tomorrow afternoon
+    - any meetings on Friday afternoon
+    - any meetings on Thursday evening
+    - any meetings on Monday evening
+    - do I have any meetings tomorroe evening
+    - schedule for Monday evening
+    - schedule for Friday evening
+    - schedule for Tuesday evening
+    - meetings this evening
+    - meetings Monday evening
+    - meetings Saturday evening
+    - do I have any meetings this evening
+    - any meetings this evening
+    - any meetings Friday evening
+    - Do i have any meetings on Thursday evening
+    - my schedule for Monday evening
+    - am I busy this evening
+    - what meeting is planned in afternoon
+    - do I have any meetings in afternoon
+    - what meetings are planned in evening
+    - what meetings are planned in afternoon
+    - What is my schedule for tomorrow evening?
+    - what is my schedule for today evening?
+    - what is my schedule for Friday evening
+    - what is my schedule for Monday evening
+
+- intent: ask_other_schedule_ambiguous
+  examples: |
+    - [Tanuj's](name) calendar
+    - [Monica's](name) calendar
+    - [ram's](name) calendar
+    - [sunita](name) calendar
+    - [Shilpa's](name) schedule
+    - [Monica's](name) schedule
+    - [bambi's](name) schedule
+    - [sahil's](name) meetings
+    - what [lala's](name) calender look like
+    - [Shilpa's](name) day
+    - [Rushi's](name) day
+    - Does [Sneha](name) have any meetings
+    - send [Dev's](name) calendar
+    - send [Dev's](name) schedule
+    - send me [Tanuj's](name) schedule
+    - send me [Deepak's](name) schedule
+    - send me [Bharti's](name) schedule
+    - send me [Vishal's](name) calendar
+    - send me [MOnica's](name) schedule
+    - send me [Vishal's](name) schedule
+    - [Tanuj's](name) meetings
+    - [Vishal's](name) meetings
+    - [Raven's](name) calendar
+    - [Shivam](name) calendar
+    - any meetings for [tanuj](name)
+    - any meetings for [Bharti](name)
+    - any meetings for [kevin](name)
+    - I want to know [Bharti's](name) meetings
+    - I want to know [Monica's](name) meetings
+    - I want to know [Syam's](name) meetings
+    - I want to know [Bharti's](name) calendar
+    - I want to know [Deepika's](name) calendar
+    - I want to know [Deepak's](name) calendar
+    - I want to know [Gauri's](name) schedule
+    - I want to know [Sunita's](name) schedule 
+    - I want to know [Vishal's](name) schedule
+  
+- intent: ask_others_schedule
+  examples: |
+    - does [Yamini](name) have any meetings today
+    - what is [fatima's](name) schedule today
+    - can you tell me [Tanuj's](name) schedule for today
+    - [Tanuj's](name) calendar today
+    - What meetings [Tanuj](name) has on Wednesday?
+    - What meetings [Tanuj](name) has on Wed?
+    - What meetings [Tanuj](name) has on wed?
+    - What meetings does [Vishal](name) have on Tuesday?
+    - What meetings does [Vishal](name) have on Tues
+    - What meetings does [Vishal](name) have on tues
+    - What meetings does [Monica](name) have on Tuesday?
+    - [Tanuj](name) meetings for next Wednesday
+    - [Tanuj](name) meetings for next Wed
+    - [Vishal](name) meetings for next Wednesday
+    - [Vishal](name) meetings for next wed
+    - [Monica](name) meetings for next Wednesday
+    - When are [Tanuj's](name) meeting tomorrow
+    - When are [Vishal's](name) meeting tomorrow
+    - When are [Bharti's](name) meeting tomorrow
+    - When are [Monica's](name) meeting tomorrow
+    - I want to know what meetings [Tanuj](name) has on 22 october
+    - I want to know what meetings [Tanuj](name) has on 22 oct
+    - what meetings [Ram](name) had on 23rd September
+    - what meetings [Ram](name) had on 23rd Sept
+    - what [Syam's](name) calender looks like a day after tomorrow
+    - what does [Vishal's](name) schedule look like next Friday
+    - what does [Vishal's](name) schedule look like next Fri
+    - Does [Rushi](name) have amy meetings tomorrow
+    - Is [sanket](name) free tomorrow
+    - can you tell me [Deepika's](name) schedule for next day
+    - [Tanuj's](name) calender tomorrow
+    - does [Anchit](name) have any calls on Thursday
+    - does [Anchit](name) have any calls on Thurs
+    - does [Anchit](name) have any calls on thurs
+    - how's [Bharti's](name) Thursday looks like
+    - how's [Monica's](name) Saturday look like
+    - can you tell me [deepak's](name) schedule today
+    - can you tell me [deepak's](name) calendar today
+    - [rushi's](name) meetings next friday
+    - [rushi's](name) meetings next fri
+    - [ram's](name) meetings next friday
+    - [Monica's](name) Monday calendar
+    - [Syam's](name) Friday calendar
+    - [Deepak's](name) schedule a day after tomorrow
+    - [Tanuj's](name) schedule a day after tomorrow
+    - [Syam's](name) Thursday Calendar
+    - how's [Deepak's](name) day look like on Wednesday
+    - how's [Tanuj's](name) day look like on Monday
+    - can you send me [Deepak's](name) schedule
+    - can you send me [Murli's](name) Calendar
+    - I want to know [Monica's](name) schedule for 03/12/2022? 
+    - I want to know [Tanuj's](name) schedule for 03/12/2022?
+    - I want to know [Deepak's](name) schedule for 03/12/2022? 
+    - I want to know [Sunita's](name) schedule for 03/12/2022?
+    - I want to know [Monica's](name) schedule for 03.12.2022? 
+    - I want to know [Tanuj's](name) schedule for 03.12.2022?
+    - I want to know [Deepak's](name) schedule for 03.12.2022? 
+    - I want to know [Sunita's](name) schedule for 03.12.2022?
+    - I want to know what meetings [Monica's](name) have on 20/11/2022
+    - I want to know what meetings [Tanuj's](name) have on 31/01/2018
+    - I want to know what meetings [Pawan's](name) have on 20/11/2017
+    - I want to know what meetings [Matthew's](name) have on 20/11/2015
+    - I want to know what meetings [Sunita's](name) have on 20/11/2035
+    - I want to know what meetings [Monica's](name) have on 20.11.2022
+    - I want to know what meetings [Tanuj's](name) have on 31.01.2018
+    - I want to know what meetings [Pawan's](name) have on 20.11.2017
+    - I want to know what meetings [Matthew's](name) have on 20.11.2015
+    - I want to know what meetings [Sunita's](name) have on 20.11.2035
+    - I want to know [Tanuj's](name) schedule for 18th Nov
+    - I want to know [Sunita's](name) schedule for 20th Dec
+    - I want to know [Deepika's](name) schedule for 23rd Sept
+    - I want to know [Deepak's](name) schedule for 19 Jan
+    - I want to know [Tanuj's](name) schedule for 3 Feb
+    - I want to know [Bharti's](name) schedule for 14 Mar
+    - I want to know [MOnica's](name) schedule for 18th apr
+    - I want to know [Vishal's](name) schedule for 20th may
+    - I want to know [Bharti's](name) schedule for 23rd jun
+    - I want to know [Shilpa's](name) schedule for 19 jul
+    - I want to know [Bharti's](name) schedule for 3 aug
+    - I want to know [Tanuj's](name) schedule for 14 oct
+
+- intent: ask_others_schedule_range
+  examples: |
+    - can you tell me if [deepak's](name) is busy this morning
+    - what are [tanuj's](name) meetings in morning
+    - what are [tanuj](name) meetings in the evening
+    - [Vishal's](name) meetings in the afternoon
+    - [sunita's](name) meetings in afternoon
+    - is [syam's](name) busy tomorrow afternoon
+    - is [vishal's](name) busy next friday afternoon
+    - [Monica](name) in any meetings this afternoon
+    - [Syam](name) in any meetings Friday afternoon
+    - [Monica](name) in any meetings tomorrow afternoon?
+    - [Tanuj](name) in any meetings evening
+    - Is [Deepak](name) busy tomorrow evening
+    - Does [Monica](name) have any meetings on Monday evening
+    - Any meetings for [Ram](name) tomorrow evening
+    - Any meetings for [Deepak](name) Monday evening
+    - can you tell me if [deepak's](name) is busy this evening
+    - can you tell me if [deepak's](name) is busy this evening
+    - what are [tanuj's](name) meetings in the evening
+    - what are [tanuj's](name) meetings this evening
+    - [Tanuj's](name) schedule this morning 
+    - [Shivam's](name) schedule this morning
+    - [Deepak's](name) calendar this morning
+    - [Vishal's](name) schedule this evening
+    - [Shilpa's](name) schedule this afternoon
+    - [Pawan's](name)  meetings this afternoon
+    - [Tanuj's](name) calendar this afternoon
+    - [Bharti's](name) calendar this evening
+    - [Gauri's](name) meetings this morning
+    - [Sunita's](name) calendar this morning
+    - [Aradhana's](name) meetings tomorrow afternoon
+    - [Deepak's](name) meetings tomorrow afternoon
+    - [Simran's](name) meetings tomorrow afternoon
+
+- intent: ask_range_weird
+  examples: |
+    - [Tanuj's](name) morning schedule
+    - [Vishal's](name) morning schedule
+    - [Gauri's](name) morning schedule
+    - [Sunita's](name) mrng schedule
+    - [Monica's](name) mrng schedule
+    - [Shilpa's](name) evening schedule
+    - [Deepak's](name) evening schedule
+    - [Deepika's](name) evening schedule
+    - [Murali's](name) evng schedule
+    - [Reshma's](name) evng schedule
+    - [Kiran's](name) evng schedule
+    - [Bharti's](name) afternoon schedule    
+    - [Suarab's](name) afternoon schedule
+    - [Ram's](name) afternoon schedule
+    - [Dev's](name) noon schedule
+    - [Anchit's](name) noon schedule
+    - [Anshul's](name) aftrnoon schedule
+    
+
+# - intent: ask_postlunch_range_weird
+#   examples: |
+#     - [Anshul's](name) post lunch schedule
+#     - [Tanuj's](name) post lunch calendar
+#     - [Monica's](name) post lunch calendar
+#     - [ram's](name) post lunch calendar
+#     - [sunita](name) post lunch calendar
+#     - [Shilpa's](name) post lunch schedule
+#     - [Monica's](name) post lunch schedule
+#     - [bambi's](name) post lunch schedule
+#     - [sahil's](name) post lunch meetings
+
+- intent: ask_range_weird_personal
+  examples: |
+    - my morning schedule
+    - morning schedule
+    - can you tell me my morning schedule
+    - what's my morning schedule
+    - my mrng schedule
+    - can you tell me my mrng schedule
+    - can you show me my evening schedule
+    - my evening schedule
+    - evening schedule
+    - my evng schedule
+    - can you show me evng schedule
+    - what's my evng schedule
+    - my afternoon schedule    
+    - what's my afternoon schedule
+    - show me my afternoon schedule
+    - my noon schedule
+    - afternoon schedule
+    - noon schedule
+
+- intent: ask_range_ambiguous
+  examples: |
+    - [Tanuj's](name) meetings for afternoon
+    - [Vishal's](name) meetings for afternoon
+    - [Sunita's](name) meetings for afternoon
+    - [Tanuj's](name) meetings for morning
+    - [Vishal's](name) meetings for morning
+    - [Sunita's](name) meetings for morning
+    - [Tanuj's](name) meetings for evening
+    - [Vishal's](name) meetings for evening
+    - [Sunita's](name) meetings for evening
+    - [Tanuj's](name) calendar availability for afternoon
+    - [Vishal's](name) calendar availability for afternoon
+    - [Sunita's](name) calendar availability for afternoon
+    - [Tanuj's](name) calendar availability for morning
+    - [Vishal's](name) calendar availability for morning
+    - [Sunita's](name) calendar availability for morning
+    - [Tanuj's](name) calendar availability for evening
+    - [Vishal's](name) calendar availability for evening
+    - [Sunita's](name) calendar availability for evening
+    - [Tanuj's](name) schedule for afternoon
+    - [Vishal's](name) schedule for afternoon
+    - [Sunita's](name) schedule for afternoon
+    - [Tanuj's](name) schedule for morning
+    - [Vishal's](name) schedule for morning
+    - [Sunita's](name) schedule for morning
+    - [Tanuj's](name) schedule for evening
+    - [Vishal's](name) schedule for evening
+    - [Sunita's](name) schedule for evening
+
+# - intent: range_special
+#   examples: |
+#     - [Tanuj's](name) morning schedule
+#     - [Shivam's](name) morning schedule
+#     - [Deepak's](name) morning calendar
+#     - [Gauri's](name) morning meetings
+#     - [Sunita's](name) morning calendar
+#     - [Vishal's](name) evening schedule
+#     - [Bharti's](name) evening calendar
+#     - [Deepika's](name) evening meetings
+#     - [Shilpa's](name) afternoon schedule
+#     - [Pawan's](name)  afternoon meetings
+#     - [Tanuj's](name) afternoon calendar
+#     - [Vishal's](name) afternoon calendar
+
+# - intent: ask_others_schedule_range
+#   examples: |
+#     - can you tell me if [deepak's](name) is busy this morning
+#     - what are [tanuj's](name) meetings this morning
+#     - what are [tanuj](name) meetings in the evening
+#     - [Vishal's](name) meetings in the afternoon
+#     - [sunita's](name) meetings this afternoon
+#     - is [syam's](name) busy tomorrow afternoon
+#     - is [vishal's](name) busy next friday afternoon
+#     - [Monica](name) in any meetings this afternoon
+#     - [Syam](name) in any meetings Friday afternoon
+#     - [Monica](name) in any meetings tomorrow afternoon?
+#     - [Tanuj](name) in any meetings this evening
+#     - Is [Deepak](name) busy tomorrow evening
+#     - Does [Monica](name) have any meetings on Monday evening
+#     - Any meetings for [Ram](name) tomorrow evening
+#     - Any meetings for [Deepak](name) Monday evening
+#     - can you tell me if [deepak's](name) is busy this evening
+#     - can you tell me if [deepak's](name) is busy this evening
+#     - what are [tanuj's](name) meetings this evening
+#     - what are [tanuj's](name) meetings this evening
+#     - [Tanuj's](name) schedule this morning 
+#     - [Shivam's](name) schedule this morning
+#     - [Deepak's](name) calendar this morning
+#     - [Vishal's](name) schedule this evening
+#     - [Shilpa's](name) schedule this afternoon
+#     - [Pawan's](name)  meetings this afternoon
+#     - [Tanuj's](name) calendar this afternoon
+#     - [Bharti's](name) calendar this evening
+#     - [Gauri's](name) meetings this morning
+#     - [Sunita's](name) calendar this morning
+
+# - intent: check
+#   examples: |
+#     - [Tanuj's](name) morning schedule
+#     - [Shivam's](name) morning schedule
+#     - [Deepak's](name) morning calendar
+#     - [Vishal's](name) evening schedule
+#     - [Shilpa's](name) afternoon schedule
+#     - [Pawan's](name) afternoon meetings
+#     - [Tanuj's](name) afternoon calendar
+#     - [Bharti's](name) evening calendar
+#     - [Gauri's](name) morning meetings
+#     - [Sunita's](name) morning calendar
+
+- intent: ask_business_hours
+  examples: |
+    - how many days and hours do I have to work here
+    - how many hours should I work
+    - do I have to work here certain number of hours
+    - what are the working hours here
+    - how many hours are required to work
+    - what is the work hour requirement
+    - what is the general business working hours at Intellificial
+    - how long does Intellificial stay open
+    - operating hours at Intellificial
+    - what is the operating hours at Intellificial
+    - general business hours at Intellificial
+    - general working hours at Intellificial
+    - operating hours at Intellificial
+    - What are your office opening hours?
+    - What are the office timings?
+    - I want to know your office timings?
+    - can you tell me the office hours
+    - can you tell me the operating hours
+    - can you tell me for how long is the office open
+    - I want to know business working hours
+    - Is the office open between 9.00 AM to 5.00 PM?
+    - When does your office generally open?
+    - When is the office open?
+    - What are the work timings?
+    - What time should I start my work?
+    - What time should I resume work?
+    - Business working hrs
+    - business working hrs
+
+
+- intent: reply_contract_part_time
+  examples: |
+    - Part-time
+    - part time
+    - I am working on part time basis
+    - I am on part time contract
+    - I am working part time
+    - What are the working hours for a part time employee?
+    - what are the business hours for part-time
+    - what are the business hours for part time
+    -  what are the business hours for part time employees
+
+- intent: reply_contract_full_time
+  examples: |
+    - full time
+    - Full-time
+    - I am working on full time basis
+    - I am on full time contract
+    - I am working full time
+    - What are the working hours for a full time employee?
+    - what are the business hours for full-time
+    - what are the business hours for full time employees
+
+- intent: reply_contract_fixed
+  examples: |
+    - Fixed-term
+    - Fixed
+    - I am working on fixed time basis
+    - I am on fixed term contract
+    - I am working fixed term
+    - I am working fixed time
+    - What are the working hours for a fixed term contractor?
+    - what are the business hours for fixed term employees
+
+- intent: reply_contract_independent
+  examples: |
+    - Independent
+    - independent contractor
+    - I am working as independent contractor
+    - What are the working hours for an independent contractor?
+    - What are the working hours for a contractor?
+    - what are the business hours for independent contractor 
+    - what are the business hours for independent contractors employees
+    - what are the business hours for contractor employees
+
+- intent: work_overtime
+  examples: |
+    - Is overtime mandatory for employees
+    - are we rewuired to work overtime
+    - do I have to work overtime
+    - how often must employees work overtime
+    - can employee be forced to work overtime
+    - who do i tell if i work overtime
+    - when should I work overtime
+    - do employees have to work overtime
+    - Want to check on extra working hours policies
+    - Do I have to stretch beyond my working hours?
+    - How often do I have to work beyond regular working hours?
+    - How often do I have to work extra hours?
+    - What is the criteria for overtime work?
+    - Want to check on extra working hours policies
+    - Do I have to stretch beyond my working hours?
+    - How often do I have to work beyond regular working hours?
+    - How often do I have to work extra hours?
+    - What is the policy for working extra hrs?
+    - Will I be paid for extra hours?
+    - extra hrs payment for work
+    - extra hours payment for work
+    - extra hrs payment
+    - I want to know about overtime policy
+    - overtime policy
+
+- intent: gibberish
+  examples: |
+    - dhskhjshf
+    - dsihdsjfs
+    - dsoejwewl,wél;,d;s
+    - dsldjskdksnds
+    - c
+    - d
+    - k
+    - 1
+    - 21214353
+    - 23
+    - 890
+
+
+# - intent: ask_postlunch_schedule_ambiguous
+#   examples: |
+#     - post lunch schedule
+#     - How many meetings do I have post lunch
+#     - my post lunch meeting
+#     - do I have any meetings this post lunch
+
+# - intent: ask_postlunch_schedule_range
+#   examples: |
+#     - post lunch schedule
+#     - How many meetings do I have post lunch
+#     - Today's post lunch meeting
+#     - do I have any meetings this post lunch
+
+# - intent: ask_others_postlunch_schedule_range
+#   examples: |
+#     - [Tanuj's](name) post lunch schedule on saturday
+#     - [Tanuj's](name) post lunch calendar on saturday
+#     - [Tanuj's](name) schedule post lunch for saturday
+#     - [Tanuj's](name) calendar post lunch  for saturday
+#     - Does [Monica](name) have any meetings this post lunch
+#     - [Tanuj's](name) post lunch meetings for saturday
+#     - How many meetings do I have post lunch on 03-Nov-2022 ?
+#     - How many meetings do I have post lunch on saturday?
+
+- intent: ask_personal_postlunch_schedule 
+  examples: |
+    - post lunch meetings on Monday
+    - post lunch meetings on Mon
+    - post lunch meetings on wed
+    - post lunch meetings on Friday
+    - post lunch meetings on tue
+    - when are my meetings post lunch tomorrow
+    - when are my meetings post lunch yesterday
+    - what's my post lunch schedule for tomorrow
+    - tell me my post lunch schdule for tomorrow
+    - how busy am I tomorrow post lunch
+    - do I have any post lunch meetings tomorrow
+    - what does my day look like on post lunch Wednesday
+    - what does my day look like on post lunch tue
+    - what does my day look like on post lunch Thrusday
+    - what does my day look like on post lunch sat
+    - whats my schedule for post lunch Wednesday
+    - whats my schedule for post lunch thurs
+    - please show calender for Wednesday post lunch
+    - please show calender for post lunch friday
+    - please show schdule for tuesday post lunch
+    - please show schdule for tues post lunch
+    - please show schdule for mon post lunch
+    - How many meetings do I have post lunch on saturday?
+    - How many meetings do I have post lunch tomorrow?
+    - please show schdule for post lunch on wed
+    - please show schdule for post lunch on tuesday
+    - do I have any post lunch meetings on Thursday
+    - do I have any post lunch meetings on Thurs
+    - do I have any post lunch meetings on thurs
+    - show me my calender for Wednesday post lunch
+    - post lunch schedule next Tuesday 
+    - send me post lunch schedule for Friday
+    - send me post lunch schedule for Thursday 
+    - send me post lunch schedule for Thurs
+    - what is my post lunch schedule on 23rd october
+    - do I have any post lunch meetings on 28th february
+    - what is my post lunch schedule on 23/10/2022
+    - what is my post lunch schedule on 15/10/2022
+    - what is my post lunch calendar on 12/8/2022
+    - What does my calender look like today post lunch?
+    - Meetings post lunch today?
+    - what meetings do I have today post lunch
+    - what are my meetings today post lunch
+    - what are my  post lunch meetings today
+    - do I have any post lunch meetings today?
+    - what does my  post lunch schedule look like today
+    - what's my  post lunch schedule today look like
+    - schedule for  post lunch today
+    - post lunch meetings for today
+    - do I have any  post lunch meetings today
+    - can you tell me my  post lunch meetings for today
+    - do I have any  post lunch meetings this Sunday
+    - any  post lunch calls this Sunday
+    - are there any  post lunch meetings this Friday
+    - Do I have any  post lunch meetings this Thursday
+    - What's my  post lunch calendar look like the day after tomorrow?
+    - I want to know my  post lunch schedule for 03/12/2022? 
+    - I want to know my  post lunch schedule for 03.12.2022? 
+    - tomorrow's  post lunch meetings
+    - a day after tomorrow's  post lunch meetings
+    - tomorrow's  post lunch calendar
+    - tomorrow's  post lunch schedule
+    - a day after tomorrow's  post lunch schedule
+    - a day after tomorrow's  post lunch calendar
+    - I want to know my  post lunch schedule for 18th Nov
+    - I want to know my  post lunch schedule for 20th Dec
+    - I want to know my  post lunch schedule for 23rd Sept
+    - I want to know my  post lunch schedule for 19 Jan
+    - I want to know my  post lunch schedule for 3 Feb
+    - I want to know my  post lunch schedule for 14 Mar
+    - I want to know my  post lunch schedule for 18th apr
+    - I want to know my  post lunch schedule for 20th may
+    - I want to know my  post lunch schedule for 23rd jun
+    - I want to know my  post lunch schedule for 19 jul
+    - I want to know my  post lunch schedule for 3 aug
+    - I want to know my  post lunch schedule for 14 oct
+    - can you tell me my  post lunch schedule for 18th apr
+    - can you tell me my  post lunch schedule for 20th may
+    - can you tell me my  post lunch schedule for 23rd jun
+    - can you tell me my  post lunch schedule for 19 jul
+    - can you tell me my  post lunch schedule for 3 aug
+    - can you tell me my  post lunch schedule for 14 oct
+    - How many meetings do I have post lunch on 09-Jan-2022?
+    - How many meetings do I have post lunch on 03-Dec-2023?
+    - How many meetings do I have post lunch on 29-jan-2022?
+    - How many meetings do I have post lunch on 03-Nov-2022?
+    - How many meetings do I have post lunch on 13-Dec-2022?
+    - How many meetings do I have post lunch on 29-jan-2022?
+    - How many meetings do I have post lunch on 15-July-2022?
+    - How many meetings do I have post lunch on 03-Mar-2022?
+    - How many meetings do I have post lunch on 29-june-2022?
+
+- intent: ask_personal_postlunch_schedule_ambiguous
+  examples: |
+    - my post lunch Meetings
+    - my post lunch calender
+    - post lunch calendar availability
+    - my calendar  post lunch availability 
+    - calendar  post lunch availability for me
+    - what  post lunch calls do I have
+    - do I have any post lunch meetings 
+    - any  post lunch calls
+    - is there any  post lunch calls
+    - please tell me my  post lunch meetings 
+    - tell me my  post lunch meetings
+    - can you tell me my  post lunch meetings
+    - do I have any  post lunch meetings?
+    - please fetch my  post lunch schedule
+    - what's my  post lunch schedule like
+    - please tell me my  post lunch meetings
+    - tell me my  post lunch meetings
+    - what does my day after post lunch look like
+    - my  post lunch day
+    - my  post lunch plan
+    - my  post lunch meetings
+    - my  post lunch schedule
+    - send me  post lunch schedule
+    - can you send me my  post lunch schedule
+    - Help me know my  post lunch schedule
+    - can you tell me my  post lunch schedule
+    - can you tell my  post lunch schedule
+    - How many meetings do I have post lunch?
+
+
+
+- intent: ask_other_postlunch_schedule_ambiguous
+  examples: |
+    - [Anshul's](name) post lunch schedule
+    - [Tanuj's](name) post lunch calendar
+    - [Monica's](name) post lunch calendar
+    - [ram's](name) post lunch calendar
+    - [sunita](name) post lunch calendar
+    - [Shilpa's](name) post lunch schedule
+    - [Monica's](name) post lunch schedule
+    - [bambi's](name) post lunch schedule
+    - [sahil's](name) post lunch meetings
+    - [Tanuj's](name) post lunch meetings
+    - what [lala's](name) post lunch calender look like
+    - [Shilpa's](name) post lunch day
+    - [Rushi's](name) post lunch day
+    - Does [Sneha](name) have any post lunch meetings
+    - send [Dev's](name) post lunch calendar
+    - send [Dev's](name) post lunch schedule
+    - send me [Tanuj's](name) post lunch schedule
+    - send me [Deepak's](name) post lunch schedule
+    - send me [Bharti's](name) post lunch schedule
+    - send me [Vishal's](name) post lunch calendar
+    - send me [MOnica's](name) post lunch schedule
+    - send me [Vishal's](name) post lunch schedule
+    - [Tanuj's](name) post lunch meetings
+    - [Vishal's](name) post lunch meetings
+    - [Raven's](name) post lunch calendar
+    - [Shivam](name) post lunch calendar
+    - any post lunch meetings for [tanuj](name)
+    - any post lunch meetings for [Bharti](name)
+    - any post lunch meetings for [kevin](name)
+    - I want to know [Bharti's](name) post lunch meetings
+    - I want to know [Monica's](name) post lunch meetings
+    - I want to know [Syam's](name) post lunch meetings
+    - I want to know [Bharti's](name) post lunch calendar
+    - I want to know [Deepika's](name) post lunch calendar
+    - I want to know [Deepak's](name) post lunch calendar
+    - I want to know [Gauri's](name) post lunch schedule
+    - I want to know [Sunita's](name) post lunch schedule 
+    - I want to know [Vishal's](name) post lunch schedule
+    
+  
+- intent: ask_others_postlunch_schedule
+  examples: |
+    - does [Yamini](name) have any post lunch meetings today
+    - what is [fatima's](name) post lunch schedule today
+    - can you tell me [Tanuj's](name) post lunch schedule for today
+    - [Tanuj's](name) post lunch calendar today
+    - What post lunch meetings [Tanuj](name) has on Wednesday?
+    - What post lunch meetings [Tanuj](name) has on Wed?
+    - What post lunch meetings [Tanuj](name) has on wed?
+    - What post lunch meetings does [Vishal](name) have on Tuesday?
+    - What post lunch meetings does [Vishal](name) have on Tues
+    - What post lunch meetings does [Vishal](name) have on tues
+    - What post lunch meetings does [Monica](name) have on Tuesday?
+    - [Tanuj](name) post lunch meetings for next Wednesday
+    - [Tanuj](name) post lunch meetings for next Wed
+    - [Vishal](name) post lunch meetings for next Wednesday
+    - [Vishal](name) post lunch meetings for next wed
+    - [Monica](name) post lunch meetings for next Wednesday
+    - [Monica](name) post lunch meetings for tomorrow
+    - When are [Tanuj's](name) post lunch meeting tomorrow
+    - When are [Vishal's](name) post lunch meeting tomorrow
+    - When are [Bharti's](name) post lunch meeting tomorrow
+    - When are [Monica's](name) post lunch meeting tomorrow
+    - I want to know what post lunch meetings [Tanuj](name) has on 22 october
+    - I want to know what post lunch meetings [Tanuj](name) has on 22 oct
+    - what post lunch meetings [Ram](name) had on 23rd September
+    - what post lunch meetings [Ram](name) had on 23rd Sept
+    - what does [Vishal's](name) post lunch schedule look like next Friday
+    - what does [Vishal's](name) post lunch schedule look like next Fri
+    - Does [Rushi](name) have any post lunch meetings tomorrow
+    - can you tell me [Deepika's](name) post lunch schedule for next day
+    - [Tanuj's](name) post lunch calender tomorrow
+    - does [Anchit](name) have any post lunch calls on Thursday
+    - does [Anchit](name) have any post lunch calls on Thurs
+    - does [Anchit](name) have any calls post lunch on thurs
+    - can you tell me [deepak's](name) post lunch schedule today
+    - can you tell me [deepak's](name) post lunch calendar today
+    - [rushi's](name) post lunch meetings next friday
+    - [rushi's](name) post lunch meetings next fri
+    - [ram's](name) post lunch meetings next friday
+    - [Monica's](name) Monday post lunch calendar
+    - [Syam's](name) Friday post lunch calendar
+    - [Syam's](name) Thursday post lunch Calendar
+    - can you send me [Deepak's](name) post lunch schedule
+    - can you send me [Murli's](name) post lunch Calendar
+    - I want to know [Monica's](name) post lunch schedule for 03/12/2022? 
+    - I want to know [Tanuj's](name) post lunch schedule for 03/12/2022?
+    - I want to know [Deepak's](name) post lunch schedule for 03/12/2022? 
+    - I want to know [Sunita's](name) post lunch schedule for 03/12/2022?
+    - I want to know [Monica's](name) post lunch schedule for 03.12.2022? 
+    - I want to know [Tanuj's](name) post lunch schedule for 03.12.2022?
+    - I want to know [Deepak's](name) post lunch schedule for 03.12.2022? 
+    - I want to know [Sunita's](name) post lunch schedule for 03.12.2022?
+    - How many meetings do [Sunita's](name) have post lunch on 03-Nov-2022 ?
+    - How many meetings do [Monica's](name) have post lunch on 20/11/2022
+    - How many meetings do [Tanuj's](name) have post lunch on 31/01/2018
+    - How many meetings do [Pawan's](name) have post lunch on 20/11/2017
+    - How many meetings do [Matthew's](name) have post lunch on 20/11/2015
+    - How many meetings do [Sunita's](name) have post lunch on 20/11/2035
+    - How many meetings do [Monica's](name) have post lunch on 20.11.2022
+    - I want to know what meetings [Tanuj's](name) have post lunch on 31.01.2018
+    - I want to know what meetings [Pawan's](name) have post lunch on 20.11.2017
+    - I want to know what meetings [Matthew's](name) have post lunch on 20.11.2015
+    - I want to know what meetings [Sunita's](name) have post lunch on 20.11.2035
+    - How many meetings do [Monica's](name) have post lunch 14 Mar
+    - I want to know [Tanuj's](name) post lunch schedule for 18th Nov
+    - I want to know [Sunita's](name) post lunch schedule for 20th Dec
+    - I want to know [Deepika's](name) post lunch schedule for 23rd Sept
+    - I want to know [Deepak's](name) post lunch schedule for 19 Jan
+    - I want to know [Tanuj's](name) post lunch schedule for 3 Feb
+    - I want to know [Bharti's](name) post lunch schedule for 14 Mar
+    - I want to know [MOnica's](name) post lunch schedule for 18th apr
+    - I want to know [Vishal's](name) schedule post lunch for 20th may
+    - I want to know [Bharti's](name) schedule post lunch for 23rd jun
+    - I want to know [Shilpa's](name) schedule post lunch for 19 jul
+    - I want to know [Bharti's](name) post lunch schedule for 3 aug
+    - I want to know [Tanuj's](name) post lunch schedule for 14 oct
+    - What is planned today for [Tanuj's](name) post lunch?
+
+
+- intent: time_Off_in_lieu
+  examples: |
+    - Comp-off?
+    - What is comp-off policy?
+    - Help me to know Compensatory off policy 
+    - When should I request for comp-off?  
+    - When should I consume my comp-off?
+    - How many comp-offs do I have?
+    - Do I have any comp-off left?
+    - Do we get comp-off for working over-time?
+    - Can I apply for comp-off along with planned leaves?
+    - Can I avail comp-off during my notice period?
+    - Can I be compensated monitorily for my available comp-offs during the time of termination of employment?
+    - Help me with TOIL policy
+    - Do we get comp-off for working extra hrs ?
+    - TOIL policy
+    - Compensatory off Policy
+    - Is it mandatory to take comp-off within 6 months ?
+    - Can I avail comp-off after 6 months?
+    - Can I take comp-off when I am sick?
+    - Can I get comp-off if I am working 2-3 hrs extra on weekdays?
+    - Can I get comp-off if I am working 2-3 hrs on weekends?
+    - Do I need an approval from my client manager to avail comp-off?
+    - Can I get comp-off if I don't have client manager approval email?
+    - Do I need to finish all my comp-off within 6 months?
+    - Can I carry forward my comp-off to next year?
+    - I am not able to see my comp-off reflected in the system
+    - Can I send a consolidated email for working extra hours to avail comp-off?
+    - How will I know my comp-off is going to lapse?
+    - I want to know about the compensatory off
+    - How to apply for compensatory off?
+    - I worked overtime last night,can I get compensatory off?
+    - In which condition I can get the compensatory off?
+    - I worked extra hours,can I get comp-off?
+    - Will I get compensatory off if I work overtime?
+    - What is TOIL?
+    - Tell me about Time off in lieu policy
+    - Am I eligible to apply for the Comp-off in Zoho for the extra hours I have worked this week?
+    - I want to request for overtime pay, what should I do?
+    - How to write emails to get pre-approval for if I work overtime?
+    - How can I get pre-approval from my manager if I want to apply for Comensatory off?
+
+
+- intent: ask_goal_setting
+  examples: |
+    - what is goal setting
+    - how is goal setting done
+    - steps involved in goal setting
+    - who does goal setting
+    - when does goal setting happen
+    - annual performance review
+    - how KPI is tracked
+    - how to have my KPIs
+    - who defines my KPIs
+    - where to do goal setting
+    - goal setting time period
+    - how to define KPI for this year
+    - what is goal sheet
+    - who reviews my performance
+    - how my appraisal happens
+    - who decides my promotion
+    - what is the procedure for appraisal review
+    - when will I get promoted
+    - what are my KPI
+
+  - intent: ask_book_meeting
+  examples: |
+    - book a meeting
+    - book my meeting
+    - could you please book meeting for me
+    
